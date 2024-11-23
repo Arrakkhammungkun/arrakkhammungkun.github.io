@@ -26,31 +26,155 @@
         a:hover::after {
             width: 100%;
         }
+        .glow-btn {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                        0 0 20px rgba(255, 255, 255, 0.6),
+                        0 0 30px rgba(255, 255, 255, 0.4);
+        }
+        .glow-text-black {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
+                    0 0 20px rgba(0, 0, 0, 0.3),
+                    0 0 30px rgba(0, 0, 0, 0.2);
+    }
+
     </style>
 </head>
 <body>
     <div class="min-h-screen flex flex-col ">
         <!-- Navbar -->
-        <nav id="navbar" class="fixed z-10 shadow-md  top-0 w-full bg-[#0a0a0a]  flex justify-center transition-transform duration-300">
-            <div class="sm:block p-2">
-                <ul class="text-2xl font-medium items-center flex menu menu-horizontal text-[#c0b9b9]">
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Ability</a></li>
-                    <li><a href="">Project</a></li>
-                </ul>
-            </div>
+        <nav id="navbar" class="fixed z-10 shadow-md  top-0 w-full bg-[#0a0a0a] flex justify-center  transition-transform duration-300 items-center">
+                <div class="flex items-center justify-between ">
+                    
+                    <div>
+                        <ul class="text-2xl space-x-8 font-medium items-center flex menu menu-horizontal text-[#c0b9b9]">
+                            <li><a href="">HOME</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Ability</a></li>
+                            <li><a href="">Project</a></li>
+                        </ul>
+                    </div>
+                    
+                </div> 
         </nav>
-
-        <div class="max-w-screen-xl m-auto px-5 pt-2 max-sm:mb-6">
-            <div class="flex flex-col gap-3">
-                <div class="h-[200vh] mt-16  text-black p-4 bg-blue-200">
-                    <p>เลื่อนลงเพื่อดู Navbar ซ่อน5555555555555555555555555555555555555555555555โโโโโโโโโโโโโโโโฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏฏ</p>
+        <div class="h-screen flex flex-col justify-center items-center text-center bg-white text-black shadow-lg">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-20">
+                <!-- Text Section -->
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 glow-text-black">Hi, I'm Arrak</h1>
+                    <p class="text-lg md:text-xl mb-6 glow-text-black">A passionate Software Engineer and Web Developer</p>
+                    <a href="#about" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
+                        Learn More
+                    </a>
+                </div>
+                <!-- Image Section -->
+                <div>
+                    <img src="./dist/img/4.jpg" alt="img" class="w-60 h-60 md:w-60 md:h-60 object-cover rounded-full">
                 </div>
             </div>
         </div>
+        <div class="  bg-[#0a0a0a] text-white shadow-lg">
+            <div class="container mx-auto text-start mt-[3.5rem] mb-[3rem] py-4  ">
+                <div class="text-center  ">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4 glow-text">About Me</h1>
+
+                </div>
+                <div class="w-full md:flex-row md:justify-between  mx-auto flex flex-col justify-between gap-10 p-8 text-white">
+                    <div class="flex-1 justify-center flex-col p-1 ">
+
+                        <div class=" w-[60%] mx-auto text-lg text-white leading-relaxed ">
+
+                            <div class="flex gap-1 mb-2 ">
+                                <h1 class="text-xl w-[5rem] font-bold">Name : </h1>
+                                <h for="" class="flex-grow"> Arrak Khammungkun</h>
+                            </div>
+                            <div class="flex gap-3 mb-2">
+                                <h1 class="text-xl font-bold">Age :  </h1>
+                                <label for=""> 20 years</label>
+                            </div>
+                            <div class="flex gap-3 mb-2">
+                                <h1 class="text-xl font-bold">Gender : </h1>
+                                <label for=""> Male</label>
+                            </div>
+                            <div class="flex gap-3 mb-2 ">
+                                <h1 class="text-xl font-bold">Nationality : </h1>
+                                <label for=""> Thai</label>
+                            </div>
+                            <div class="flex gap-3 mb-2">
+                                <h1 class="text-xl font-bold ">Address :
+                                <h1>
+                                    ChiangRai,Thailand
+                                </h1>    
+                                </h1>
+                            </div>
        
- 
+                        </div>
+    
+                    </div>
+                    <div class="flex-1 p-1 ">
+                        <div class="flex justify-end items-center md:justify-end">
+                            <p class="text-lg text-white leading-relaxed text-justify  w-full md:w-[80%]">
+                                I'm a second-year Software Engineering student at the University of Phayao.  
+                                I love developing web applications, solving problems, and learning new technologies.  
+                                My goal is to build impactful software that makes life easier.
+                            </p>
+                        </div>
+    
+                    </div>
+                </div>
+
+            </div>
+
+            
+      
+        </div>
+        <section id="skills" class="py-20 bg-gray-100">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8">Skills</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
+                        <img src="./dist/img/css-3.png" alt="CSS Logo" class="w-24 h-24 rounded-3xlmb-4 object-cover">
+                        <h2 class="text-xl font-bold mb-2">CSS</h2>
+                        <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                          <div class="bg-green-500 h-4 rounded-full" style="width: 90%;"></div>
+                        </div>
+                        <p class="text-sm text-gray-700 mt-2">90%</p>
+                      </div>
+
+                      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
+                        <img src="https://via.placeholder.com/100" alt="HTML Logo" class="w-24 h-24 rounded-full mb-4 object-cover">
+                        <h2 class="text-xl font-bold mb-2">HTML</h2>
+                        <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                          <div class="bg-yellow-500 h-4 rounded-full" style="width: 65%;"></div>
+                        </div>
+                        <p class="text-sm text-gray-700 mt-2">65%</p>
+                      </div>
+
+                      <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
+                        <img src="https://via.placeholder.com/100" alt="JavaScript Logo" class="w-24 h-24 rounded-full mb-4 object-cover">
+                        <h2 class="text-xl font-bold mb-2">JavaScript</h2>
+                        <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                          <div class="bg-red-500 h-4 rounded-full" style="width: 40%;"></div>
+                        </div>
+                        <p class="text-sm text-gray-700 mt-2">40%</p>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+
+
     </div>
 
     <script>
@@ -74,3 +198,113 @@
     </script>
 </body>
 </html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    
+    <nav class="bg-gray-800 fixed top-0 w-full z-10 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-white text-xl font-bold">My Portfolio</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="text-gray-300 hover:text-white">About</a></li>
+                <li><a href="#skills" class="text-gray-300 hover:text-white">Skills</a></li>
+                <li><a href="#projects" class="text-gray-300 hover:text-white">Projects</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+ 
+    <section class="h-screen flex flex-col justify-center items-center text-center bg-gray-900 text-white">
+        <h1 class="text-5xl font-bold mb-4">Hi, I'm [Your Name]</h1>
+        <p class="text-xl mb-6">A passionate Software Engineer and Web Developer</p>
+        <a href="#about" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">Learn More</a>
+    </section>
+
+    
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">About Me</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                I'm a second-year Software Engineering student at the University of Phayao.  
+                I love developing web applications, solving problems, and learning new technologies.  
+                My goal is to build impactful software that makes life easier.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="skills" class="py-20 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">HTML</h3>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">CSS</h3>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">JavaScript</h3>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">Vue.js</h3>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">Node.js</h3>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">MongoDB</h3>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">Tailwind CSS</h3>
+                </div>
+                <div class="p-4 bg-white shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">Git</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">My Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="p-4 bg-gray-200 shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">Project 1</h3>
+                    <p class="text-sm text-gray-600">Description of the project...</p>
+                </div>
+                <div class="p-4 bg-gray-200 shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">Project 2</h3>
+                    <p class="text-sm text-gray-600">Description of the project...</p>
+                </div>
+                <div class="p-4 bg-gray-200 shadow-md rounded-lg">
+                    <h3 class="font-bold text-lg">Project 3</h3>
+                    <p class="text-sm text-gray-600">Description of the project...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="contact" class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+            <p class="mb-6">Feel free to reach out to me via email or social media.</p>
+            <a href="mailto:youremail@example.com" class="bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-600 transition">Send an Email</a>
+        </div>
+    </section>
+
+  
+    <footer class="bg-gray-900 text-gray-400 text-center py-4">
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+</body>
+</html> -->
