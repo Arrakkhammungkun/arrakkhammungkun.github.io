@@ -9,7 +9,7 @@
         html {
             scroll-behavior: smooth;
         }
-        body{
+        body {
             background-color: #ffffff;
         }
         .a1:after {
@@ -42,30 +42,74 @@
                         0 0 30px rgba(255, 255, 255, 0.4);
         }
         .glow-text-black {
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
-                    0 0 20px rgba(0, 0, 0, 0.3),
-                    0 0 30px rgba(0, 0, 0, 0.2);
-    }
-
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2),
+                        0 0 20px rgba(0, 0, 0, 0.3),
+                        0 0 30px rgba(0, 0, 0, 0.2);
+        }
+        /* Hamburger menu styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 10px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #c0b9b9;
+            transition: all 0.3s ease-in-out;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #0a0a0a;
+                padding: 1rem;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu li {
+                margin: 0.5rem 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="min-h-screen flex flex-col ">
+    <div class="min-h-screen flex flex-col">
         <!-- Navbar -->
-        <nav id="navbar" class="fixed z-10 shadow-md  top-0 w-full bg-[#0a0a0a] flex justify-center  transition-transform duration-300 items-center">
-                <div class="flex items-center justify-between ">
-                    
-                    <div>
-                        <ul class="text-2xl space-x-8 font-medium items-center flex menu menu-horizontal text-[#c0b9b9]">
-                            <li><a class="a1" href="#">HOME</a></li>
-                            <li><a class="a1" href="#About">About</a></li>
-                            <li><a class="a1" href="#skills">skill</a></li>
-                            <li><a class="a1" href="#project">Project</a></li>
-                            <li><a class="a1" href="#contack">contack</a></li>
-                        </ul>
-                    </div>
-                    
-                </div> 
+        <nav id="navbar" class="fixed z-10 shadow-md top-0 w-full bg-[#0a0a0a] flex justify-between items-center px-6 py-4 transition-transform duration-300">
+            <div class="flex items-center justify-between w-full">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="text-2xl space-x-8 font-medium items-center menu menu-horizontal text-[#c0b9b9]" id="nav-menu">
+                    <li><a class="a1" href="#">HOME</a></li>
+                    <li><a class="a1" href="#About">About</a></li>
+                    <li><a class="a1" href="#skills">skill</a></li>
+                    <li><a class="a1" href="#project">Project</a></li>
+                    <li><a class="a1" href="#contack">contack</a></li>
+                </ul>
+            </div>
         </nav>
         <div class="h-screen flex flex-col justify-center items-center text-center bg-white text-black shadow-lg">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-20">
@@ -73,7 +117,7 @@
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 glow-text-black">Hi, I'm Arrak</h1>
                     <p class="text-lg md:text-xl mb-6 glow-text-black">A passionate Software Engineer and Web Developer</p>
-                    <a href="#About" class=" bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
+                    <a href="#About" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
                         Learn More
                     </a>
                 </div>
@@ -83,204 +127,179 @@
                 </div>
             </div>
         </div>
-        <div class="  bg-[#0a0a0a] text-white shadow-lg transition-transform duration-300" id="About">
-            <div class="container mx-auto text-start mt-[3.5rem] mb-[3rem] py-4  ">
-                <div class="text-center  ">
-                    <h1 class="text-3xl md:text-4xl font-bold mb-4 glow-text">About Me</h1>
-
-                </div>
-                <div class="w-full md:flex-row md:justify-between  mx-auto flex flex-col justify-between gap-10 p-8 text-white">
-                    <div class="flex-1 justify-center flex-col p-1 ">
-
-                        <div class=" w-[60%] mx-auto text-lg text-white leading-relaxed ">
-
-                            <div class="flex gap-1 mb-2 ">
-                                <h1 class="text-xl w-[5rem] font-bold">Name : </h1>
-                                <h for="" class="flex-grow"> Arrak Khammungkun</h>
-                            </div>
-                            <div class="flex gap-3 mb-2">
-                                <h1 class="text-xl font-bold">Age :  </h1>
-                                <label for=""> 20 years</label>
-                            </div>
-                            <div class="flex gap-3 mb-2">
-                                <h1 class="text-xl font-bold">Gender : </h1>
-                                <label for=""> Male</label>
-                            </div>
-                            <div class="flex gap-3 mb-2 ">
-                                <h1 class="text-xl font-bold">Nationality : </h1>
-                                <label for=""> Thai</label>
-                            </div>
-                            <div class="flex gap-3 mb-2">
-                                <h1 class="text-xl font-bold ">Address :
-                                <h1>
-                                    ChiangRai,Thailand
-                                </h1>    
-                                </h1>
-                            </div>
-       
-                        </div>
-    
+        <div class="bg-[#0a0a0a] text-white shadow-lg transition-transform duration-300 "  id="About">
+            <div class="container mx-auto text-start mt-14 mb-12 py-4 px-4 md:px-8">
+              <div class="text-center">
+                <h1 class="text-2xl md:text-4xl font-bold mb-4 glow-text ">About Me</h1>
+              </div>
+              
+              <div class="flex flex-col md:flex-row justify-between gap-10 text-white">
+                
+                <!-- ข้อมูลส่วนตัว -->
+                <div class="flex-1 justify-center md:w-1/2 flex">
+                  <div class="w-full md:w-[80%] mx-auto text-base md:text-lg leading-relaxed">
+                    <div class="flex flex-col gap-2">
+                      <div class="flex gap-2">
+                        <h1 class="font-bold w-[5rem]">Name :</h1>
+                        <span class="flex-grow">Arrak Khammungkun</span>
+                      </div>
+                      <div class="flex gap-2">
+                        <h1 class="font-bold w-[5rem]">Age :</h1>
+                        <span>20 years</span>
+                      </div>
+                      <div class="flex gap-2">
+                        <h1 class="font-bold w-[5rem]">Gender :</h1>
+                        <span>Male</span>
+                      </div>
+                      <div class="flex gap-2">
+                        <h1 class="font-bold w-[6rem]">Nationality :</h1>
+                        <span>Thai</span>
+                      </div>
+                      <div class="flex gap-2">
+                        <h1 class="font-bold w-[rem]">Address :</h1>
+                        <span>ChiangRai, Thailand</span>
+                      </div>
                     </div>
-                    <div class="flex-1 p-1 ">
-                        <div class="flex justify-end items-center md:justify-end">
-                            <p class="text-lg text-white leading-relaxed text-justify  w-full md:w-[80%]">
-                                I'm a second-year Software Engineering student at the University of Phayao.  
-                                I love developing web applications, solving problems, and learning new technologies.  
-                                My goal is to build impactful software that makes life easier.
-                            </p>
-                        </div>
-    
-                    </div>
+                  </div>
                 </div>
-
+                
+                <!-- คำอธิบาย -->
+                <div class="flex-1 flex items-center">
+                  <p class="text-base md:text-lg text-white leading-relaxed text-justify w-full  md:w-[100%]">
+                    I'm a second-year Software Engineering student at the University of Phayao.  
+                    I love developing web applications, solving problems, and learning new technologies.  
+                    My goal is to build impactful software that makes life easier.
+                  </p>
+                </div>
+              </div>
             </div>
-
-            
-      
-        </div>
+          </div>
+          
         <section id="skills" class="py-20 bg-gray-100">
             <div class="container mx-auto text-center">
                 <h2 class="text-4xl font-bold mb-8">Skills</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
                         <img src="dist/img/html-5.png" alt="HTML Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
                         <h2 class="text-xl font-bold mb-2">HTML</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full" style="width: 90%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 90%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">90%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105  transition-transform duration-300">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
                         <img src="./dist/img/css-3.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
                         <h2 class="text-xl font-bold mb-2">CSS</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full" style="width: 85%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 85%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">85%</p>
                     </div>
-
-
-
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/js.png" alt="JavaScript Logo" class="w-24 h-24 rounded-xl   mb-4 object-cover ">
+                        <img src="dist/img/js.png" alt="JavaScript Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
                         <h2 class="text-xl font-bold mb-2">JavaScript</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-yellow-500 h-4 rounded-full" style="width: 70%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/icons8-vue-js-48.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
-                        <h2 class="text-xl font-bold mb-2">Vue.js </h2>
+                        <img src="dist/img/icons8-vue-js-48.png" alt="Vue.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                        <h2 class="text-xl font-bold mb-2">Vue.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/icons8-tailwind-css-50.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                        <img src="dist/img/icons8-tailwind-css-50.png" alt="Tailwind Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
                         <h2 class="text-xl font-bold mb-2">Tailwind</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full" style="width: 80%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 80%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">80%</p>
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/programing.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
-                        <h2 class="text-xl font-bold mb-2">Node.js </h2>
+                        <img src="dist/img/programing.png" alt="Node.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                        <h2 class="text-xl font-bold mb-2">Node.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-[#e7b748] h-4 rounded-full" style="width: 50%;"></div>
+                            <div class="bg-[#e7b748] h-4 rounded-full" style="width: 50%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">50%</p>
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/python.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
-                        <h2 class="text-xl font-bold mb-2">Python </h2>
+                        <img src="dist/img/python.png" alt="Python Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                        <h2 class="text-xl font-bold mb-2">Python</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full" style="width: 75%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 75%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">75%</p>
                     </div>
-
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/icons8-mongo-db-48.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                        <img src="dist/img/icons8-mongo-db-48.png" alt="MongoDB Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
                         <h2 class="text-xl font-bold mb-2">MongoDB</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full" style="width: 60%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 60%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">60%</p>
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/java.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                        <img src="dist/img/java.png" alt="Java Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
                         <h2 class="text-xl font-bold mb-2">Java</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
                     <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300">
-                        <img src="dist/img/github.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
-                        <h2 class="text-xl font-bold mb-2">Github</h2>
+                        <img src="dist/img/github.png" alt="GitHub Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                        <h2 class="text-xl font-bold mb-2">GitHub</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
-                          <div class="bg-green-500 h-4 rounded-full " style="width: 70%;"></div>
+                            <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-
                 </div>
             </div>
         </section>
-
         <section id="projects" class="py-20 bg-[#0a0a0a]">
             <div class="container mx-auto text-center">
                 <h1 class="text-3xl md:text-4xl font-bold mb-4 glow-text text-white">Project</h1>
-
             </div>
-
-            
-
-
-
-            <div class="py-10" id="project" class="">
-                <div class="container mx-auto px-6">       
+            <div class="py-10" id="project">
+                <div class="container mx-auto px-6">
                     <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white">1.MediSE+ (Vue.js +Node & Express + MongoDB)</h1>
-                    <h1 class=" mb-4 ">MediSe is a web platform for medical consultations, featuring real-time chat with doctors using Socket.io, appointment scheduling, medication purchases, and secure payments via Stripe.</h1>
+                    <h1 class="mb-4">MediSe is a web platform for medical consultations, featuring real-time chat with doctors using Socket.io, appointment scheduling, medication purchases, and secure payments via Stripe.</h1>
                     <div class="overflow-hidden relative">
                         <!-- Images Wrapper -->
-                        <div
-                          class="flex transition-transform duration-500 ease-in-out"
-                          id="imageSlider"
-                          
-                        >
-                          <img src="dist/img/1.jpg" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/2.jpg" alt="Project 2" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/3.jpg" alt="Project 3" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/4.jpg" alt="Project 4" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/5.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/6.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/7.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/8.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/9.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                          <img src="dist/img/10.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                         
+                        <div class="flex transition-transform duration-500 ease-in-out" id="imageSlider">
+                            <img src="dist/img/1.jpg" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/2.jpg" alt="Project 2" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/3.jpg" alt="Project 3" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/4.jpg" alt="Project 4" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/5.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/6.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/7.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/8.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/9.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/10.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
                         </div>
                         <!-- Navigation Buttons -->
                         <button id="prevButton" class="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-lg">
-                          Prev
+                            Prev
                         </button>
                         <button id="nextButton" class="absolute right-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-lg">
-                          Next
+                            Next
                         </button>
                         <div class="mt-4">
                             <a href="https://github.com/Arrakkhammungkun/PROJECT_MEDISE.git" target="_blank"
@@ -291,237 +310,116 @@
                                 View on GitHub
                             </a>
                         </div>
-                      </div>
-                  </div>
+                    </div>
                 </div>
-
-            </div>  
-        </section>
-        <div class="min-h-screen bg-gray-100 py-10 px-6 " id="contack">
-            <div class="container mx-auto bg-white p-6 rounded-lg shadow-md">
-                <h1 class="text-3xl md:text-4xl font-bold  glow-text-black text-black mx-auto text-center my-12">contack</h1>
-
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <!-- Address -->
-                <div class="bg-gray-100   p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-                    <img src="dist/img/location-dot-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto  ">
-                    <path d="M2.94 2.94a1 1 0 011.41 0l12.72 12.72a1 1 0 01-1.41 1.41L2.94 4.35a1 1 0 010-1.41z"></path>
-                  </svg>
-                  <h3 class="text-lg font-semibold text-gray-800">Address</h3>
-                  <p class="text-sm text-gray-600">123 Main St, Your City</p>
-                </div>
-          
-                <!-- Phone -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-                    <img src="dist/img/phone-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto  ">
-                    <path d="M6.62 10.79a15.66 15.66 0 006.79 6.79l2.2-2.2a1 1 0 011.15-.18 11.4 11.4 0 003.56.57 1 1 0 011 1V18a2 2 0 01-2 2 18.66 18.66 0 01-9-3.37A18.66 18.66 0 012 4a2 2 0 012-2h2a1 1 0 011 1 11.4 11.4 0 00.57 3.56 1 1 0 01-.18 1.15z"></path>
-                  </svg>
-                  <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
-                  <p class="text-sm text-gray-600">+66 64-136-5722</p>
-                </div>
-          
-                <!-- Email -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300" >
-                    <img src="dist/img/envelope-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto  ">                    <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5z"></path>
-                  </svg>
-                  <h3 class="text-lg font-semibold text-gray-800">Email</h3>
-                  <p class="text-sm text-gray-600">arrak26092547@gmail.com</p>
-                </div>
-                
-                <!-- Facebook -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-                    <img src="dist/img/facebook-brands-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto  ">                    <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5z"></path>
-                    <path d="M10 1C4.477 1 0 5.477 0 11c0 5.016 3.657 9.165 8.438 10v-7.04H6.06v-2.96H8.44V7.96c0-2.373 1.377-3.657 3.503-3.657.958 0 1.787.07 2.028.103v2.36h-1.39c-1.092 0-1.417.693-1.417 1.403v1.673h2.77l-.44 2.96h-2.33V21C16.343 20.165 20 16.016 20 11c0-5.523-4.477-10-10-10z"></path>
-                  </svg>
-                  <h3 class="text-lg font-semibold text-gray-800">Facebook</h3>
-                  <a href="https://www.facebook.com/xaraks.kha.mung.khul" target="_blank" class="text-sm text-blue-600">facebook.com/yourpage</a>
-                </div>
-                
-                <!-- Instagram -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-                    <img src="dist/img/instagram-brands-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto  ">                    <path d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5z"></path>
-                    <path d="M8.902 11.926a2.79 2.79 0 11.023-5.578 2.79 2.79 0 01-.023 5.578zM14.85 2H5.15C3.95 2 3 2.95 3 4.15v9.7c0 1.2.95 2.15 2.15 2.15h9.7c1.2 0 2.15-.95 2.15-2.15V4.15C17 2.95 16.05 2 14.85 2zm0 11.85c0 .6-.45 1.05-1.05 1.05H5.15c-.6 0-1.05-.45-1.05-1.05V4.15c0-.6.45-1.05 1.05-1.05h8.65c.6 0 1.05.45 1.05 1.05v9.7z"></path>
-                  </svg>
-                  <h3 class="text-lg font-semibold text-gray-800">Instagram</h3>
-                  <a href="https://www.instagram.com/txuchy_/" target="_blank" class="text-sm text-pink-500">instagram.com/yourprofile</a>
-                </div>
-          
-                <!-- GitHub -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-                  <svg class="w-10 h-10 mx-auto text-gray-700 mb-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5C4.701.5.5 4.701.5 10a9.5 9.5 0 006.438 9.038c.475.087.65-.212.65-.475 0-.238-.013-1.05-.013-1.912-2.637.512-3.2-.637-3.4-1.225-.112-.287-.6-1.225-1.025-1.475-.362-.2-.875-.7-.012-.712.812-.013 1.387.75 1.587 1.063.925 1.587 2.375 1.125 2.962.863.087-.65.362-1.125.65-1.387-2.312-.262-4.737-1.162-4.737-5.15 0-1.137.4-2.075 1.062-2.8-.112-.262-.475-1.3.1-2.712 0 0 .875-.275 2.862 1.062a9.756 9.756 0 015.2 0c1.987-1.325 2.85-1.062 2.85-1.062.587 1.412.225 2.462.1 2.712.675.725 1.062 1.663 1.062 2.8 0 4-2.425 4.887-4.737 5.15.4.35.725 1.012.725 2.025 0 1.462-.013 2.625-.013 2.975 0 .262.175.562.65.475A9.513 9.513 0 0019.5 10C19.5 4.701 15.299.5 10 .5z"></path>
-                  </svg>
-                  <h3 class="text-lg font-semibold text-gray-800">GitHub</h3>
-                  <a href="https://github.com/Arrakkhammungkun" target="_blank" class="text-sm text-gray-700">github.com/yourrepo</a>
-                </div>
-              </div>
             </div>
-          </div>
-          
-          
-          
-          
+        </section>
+        <div class="min-h-screen bg-gray-100 py-10 px-6" id="contack">
+            <div class="container mx-auto bg-white p-6 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold glow-text-black text-black mx-auto text-center my-12">contack</h1>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <!-- Address -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                        <img src="dist/img/location-dot-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto">
+                        <h3 class="text-lg font-semibold text-gray-800">Address</h3>
+                        <p class="text-sm text-gray-600">163 , Mueang Rai Subdistrict, Phaya Mengrai District, Chiang Rai Province</p>
+                    </div>
+                    <!-- Phone -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                        <img src="dist/img/phone-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto">
+                        <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
+                        <p class="text-sm text-gray-600">+66 64-136-5722</p>
+                    </div>
+                    <!-- Email -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                        <img src="dist/img/envelope-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto">
+                        <h3 class="text-lg font-semibold text-gray-800">Email</h3>
+                        <p class="text-sm text-gray-600">arrak26092547@gmail.com</p>
+                    </div>
+                    <!-- Facebook -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                        <img src="dist/img/facebook-brands-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto">
+                        <h3 class="text-lg font-semibold text-gray-800">Facebook</h3>
+                        <a href="https://www.facebook.com/xaraks.kha.mung.khul" target="_blank" class="text-sm text-blue-600">facebook.com/yourpage</a>
+                    </div>
+                    <!-- Instagram -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                        <img src="dist/img/instagram-brands-solid.svg" alt="" class="h-[40px] w-[40px] mx-auto">
+                        <h3 class="text-lg font-semibold text-gray-800">Instagram</h3>
+                        <a href="https://www.instagram.com/txuchy_/" target="_blank" class="text-sm text-pink-500">instagram.com/yourprofile</a>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                        <svg class="w-10 h-10 mx-auto text-gray-700 mb-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5C4.701.5.5 4.701.5 10a9.5 9.5 0 006.438 9.038c.475.087.65-.212.65-.475 0-.238-.013-1.05-.013-1.912-2.637.512-3.2-.637-3.4-1.225-.112-.287-.6-1.225-1.025-1.475-.362-.2-.875-.7-.012-.712.812-.013 1.387.75 1.587 1.063.925 1.587 2.375 1.125 2.962.863.087-.65.362-1.125.65-1.387-2.312-.262-4.737-1.162-4.737-5.15 0-1.137.4-2.075 1.062-2.8-.112-.262-.475-1.3.1-2.712 0 0 .875-.275 2.862 1.062a9.756 9.756 0 015.2 0c1.987-1.325 2.85-1.062 2.85-1.062.587 1.412.225 2.462.1 2.712.675.725 1.062 1.663 1.062 2.8 0 4-2.425 4.887-4.737 5.15.4.35.725 1.012.725 2.025 0 1.462-.013 2.625-.013 2.975 0 .262.175.562.65.475A9.513 9.513 0 0019.5 10C19.5 4.701 15.299.5 10 .5z"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold text-gray-800">GitHub</h3>
+                        <a href="https://github.com/Arrakkhammungkun" target="_blank" class="text-sm text-gray-700">github.com/yourrepo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
     <script>
         let lastScrollY = 0;
 
-        // Event Listener สำหรับ scroll
+        // Event Listener for scroll
         window.addEventListener("scroll", () => {
             const navbar = document.getElementById("navbar");
             const currentScrollY = window.scrollY;
 
             if (currentScrollY > lastScrollY) {
-                // ซ่อน Navbar
+                // Hide Navbar
                 navbar.style.transform = "translateY(-100%)";
             } else {
-                // แสดง Navbar
+                // Show Navbar
                 navbar.style.transform = "translateY(0)";
             }
 
-            lastScrollY = currentScrollY; // อัปเดตตำแหน่งล่าสุด
+            lastScrollY = currentScrollY; // Update last position
         });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Image slider
         const slider = document.getElementById('imageSlider');
-const images = slider.querySelectorAll('img');
-const prevButton = document.getElementById('prevButton');
-const nextButton = document.getElementById('nextButton');
+        const images = slider.querySelectorAll('img');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
 
-// ตัวแปรเก็บดัชนีของภาพปัจจุบัน
-let currentIndex = 0;
+        let currentIndex = 0;
 
-// อัปเดตตำแหน่งเลื่อน
-function updateSlider() {
-  const imageWidth = images[0].clientWidth; // ความกว้างของภาพ
-  slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-}
+        function updateSlider() {
+            const imageWidth = images[0].clientWidth;
+            slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+        }
 
-// ปุ่มก่อนหน้า
-prevButton.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length; // วนกลับไปภาพสุดท้าย
-  updateSlider();
-});
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlider();
+        });
 
-// ปุ่มถัดไป
-nextButton.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length; // วนกลับไปภาพแรก
-  updateSlider();
-});
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlider();
+        });
 
-// ปรับขนาดเมื่อหน้าจอเปลี่ยน (Responsive)
-window.addEventListener('resize', updateSlider);
-
-
-
+        window.addEventListener('resize', updateSlider);
     </script>
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800">
-    
-    <nav class="bg-gray-800 fixed top-0 w-full z-10 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <h1 class="text-white text-xl font-bold">My Portfolio</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#about" class="text-gray-300 hover:text-white">About</a></li>
-                <li><a href="#skills" class="text-gray-300 hover:text-white">Skills</a></li>
-                <li><a href="#projects" class="text-gray-300 hover:text-white">Projects</a></li>
-                <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
- 
-    <section class="h-screen flex flex-col justify-center items-center text-center bg-gray-900 text-white">
-        <h1 class="text-5xl font-bold mb-4">Hi, I'm [Your Name]</h1>
-        <p class="text-xl mb-6">A passionate Software Engineer and Web Developer</p>
-        <a href="#about" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">Learn More</a>
-    </section>
-
-    
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">About Me</h2>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                I'm a second-year Software Engineering student at the University of Phayao.  
-                I love developing web applications, solving problems, and learning new technologies.  
-                My goal is to build impactful software that makes life easier.
-            </p>
-        </div>
-    </section>
-
-    
-    <section id="skills" class="py-20 bg-gray-100">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">HTML</h3>
-                </div>
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">CSS</h3>
-                </div>
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">JavaScript</h3>
-                </div>
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">Vue.js</h3>
-                </div>
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">Node.js</h3>
-                </div>
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">MongoDB</h3>
-                </div>
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">Tailwind CSS</h3>
-                </div>
-                <div class="p-4 bg-white shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">Git</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   
-    <section id="projects" class="py-20 bg-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">My Projects</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-4 bg-gray-200 shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">Project 1</h3>
-                    <p class="text-sm text-gray-600">Description of the project...</p>
-                </div>
-                <div class="p-4 bg-gray-200 shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">Project 2</h3>
-                    <p class="text-sm text-gray-600">Description of the project...</p>
-                </div>
-                <div class="p-4 bg-gray-200 shadow-md rounded-lg">
-                    <h3 class="font-bold text-lg">Project 3</h3>
-                    <p class="text-sm text-gray-600">Description of the project...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   
-    <section id="contact" class="py-20 bg-gray-800 text-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
-            <p class="mb-6">Feel free to reach out to me via email or social media.</p>
-            <a href="mailto:youremail@example.com" class="bg-blue-500 py-2 px-6 rounded-lg hover:bg-blue-600 transition">Send an Email</a>
-        </div>
-    </section>
-
-  
-    <footer class="bg-gray-900 text-gray-400 text-center py-4">
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-    </footer>
-</body>
-</html> -->
