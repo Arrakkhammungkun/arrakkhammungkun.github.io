@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Scroll</title>
     <link href="./dist/output.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
@@ -73,13 +72,13 @@
         
         .animate-section, .grid-item {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-            will-change: opacity, transform;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
         }
         .animate-section.visible, .grid-item.visible {
             opacity: 1;
             transform: translateY(0);
+            will-change: opacity, transform;
         }
         /* Optimize hover for grid items */
         .grid-item {
@@ -125,12 +124,28 @@
                 gap: 12px;
             }
             .grid-item {
-                transform: translateY(20px);
-                transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+                transform: translateY(10px);
+                transition: opacity 0.3s ease-out, transform 0.
+
+3s ease-out;
             }
             .grid-item.visible {
                 opacity: 1;
                 transform: translateY(0);
+            }
+            .grid-item:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+            /* Disable slider navigation on mobile */
+            #imageSlider img:not(:first-child) {
+                display: none;
+            }
+            #prevButton, #nextButton {
+                display: none;
             }
         }
     </style>
@@ -157,70 +172,72 @@
         <div class="h-screen flex flex-col justify-center items-center text-center bg-white text-black shadow-lg">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-20 animate-section">
                 <!-- Text Section -->
-                <div class="text-center md:text-left ">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4 glow-text-black ">Hi, I'm Arrak</h1>
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 glow-text-black">Hi, I'm Arrak</h1>
                     <p class="text-lg md:text-xl mb-6 glow-text-black">A passionate Software Engineer and Web Developer</p>
                     <a href="#About" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
                         Learn More
                     </a>
                 </div>
                 <!-- Image Section -->
-                <div >
-                    <img src="./dist/img/S__15122440.jpg" alt="img" class="w-60 h-60 md:w-60 md:h-60 object-cover rounded-full" loading="lazy">
+                <div>
+                    <img 
+                        src="dist/img/S__15122440.jpg" 
+                        srcset="dist/img/S__15122440_small.jpg 320w, dist/img/S__15122440_medium.jpg 640w, dist/img/S__15122440.jpg 1280w"
+                        sizes="(max-width: 768px) 320px, (max-width: 1024px) 640px, 1280px"
+                        alt="Profile image" 
+                        class="w-60 h-60 md:w-60 md:h-60 object-cover rounded-full" 
+                        loading="lazy">
                 </div>
             </div>
         </div>
-        <div class="bg-[#0a0a0a] text-white shadow-lg transition-transform duration-300 "  id="About">
+        <div class="bg-[#0a0a0a] text-white shadow-lg transition-transform duration-300" id="About">
             <div class="container mx-auto text-start mt-14 mb-12 py-4 px-4 md:px-8">
-              <div class="text-center">
-                <h1 class="text-2xl md:text-4xl font-bold mb-4 glow-text animate-section">About Me</h1>
-              </div>
-              
-              <div class="flex flex-col md:flex-row justify-between gap-10 text-white animate-section">
-                
-                <!-- ข้อมูลส่วนตัว -->
-                <div class="flex-1 justify-center md:w-1/2 flex">
-                  <div class="w-full md:w-[80%] mx-auto text-base md:text-lg leading-relaxed">
-                    <div class="flex flex-col gap-2">
-                      <div class="flex gap-2">
-                        <h1 class="font-bold ">Name :</h1>
-                        <span class="flex-grow">Arrak Khammungkun</span>
-                      </div>
-                      <div class="flex gap-2">
-                        <h1 class="font-bold ">Age :</h1>
-                        <span>20 years</span>
-                      </div>
-                      <div class="flex gap-2">
-                        <h1 class="font-bold ">Gender :</h1>
-                        <span>Male</span>
-                      </div>
-                      <div class="flex gap-2">
-                        <h1 class="font-bold ">Nationality :</h1>
-                        <span>Thai</span>
-                      </div>
-                      <div class="flex gap-2">
-                        <h1 class="font-bold ">Address :</h1>
-                        <span>ChiangRai, Thailand</span>
-                      </div>
+                <div class="text-center">
+                    <h1 class="text-2xl md:text-4xl font-bold mb-4 glow-text animate-section">About Me</h1>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between gap-10 text-white animate-section">
+                    <!-- ข้อมูลส่วนตัว -->
+                    <div class="flex-1 justify-center md:w-1/2 flex">
+                        <div class="w-full md:w-[80%] mx-auto text-base md:text-lg leading-relaxed">
+                            <div class="flex flex-col gap-2">
+                                <div class="flex gap-2">
+                                    <h1 class="font-bold">Name :</h1>
+                                    <span class="flex-grow">Arrak Khammungkun</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <h1 class="font-bold">Age :</h1>
+                                    <span>20 years</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <h1 class="font-bold">Gender :</h1>
+                                    <span>Male</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <h1 class="font-bold">Nationality :</h1>
+                                    <span>Thai</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <h1 class="font-bold">Address :</h1>
+                                    <span>ChiangRai, Thailand</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+                    <!-- คำอธิบาย -->
+                    <div class="flex-1 flex items-center">
+                        <p class="text-base md:text-lg text-white leading-relaxed text-justify w-full md:w-[100%]">
+                            Hi! I’m Touch, a third-year Software Engineering student who loves building web applications that are both functional and user-friendly. I enjoy turning complex ideas into clean, efficient code and working with teams to solve real-world problems. I'm currently seeking an internship or part-time opportunity where I can contribute and grow as a developer.
+                        </p>
+                    </div>
                 </div>
-                
-                <!-- คำอธิบาย -->
-                <div class="flex-1 flex items-center">
-                  <p class="text-base md:text-lg text-white leading-relaxed text-justify w-full  md:w-[100%]">
-                   Hi! I’m Touch, a third-year Software Engineering student who loves building web applications that are both functional and user-friendly. I enjoy turning complex ideas into clean, efficient code and working with teams to solve real-world problems. I'm currently seeking an internship or part-time opportunity where I can contribute and grow as a developer.
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
-          
+        </div>
         <section id="skills" class="py-20 bg-gray-100">
-            <div class="container mx-auto text-center px-4 sm:px-6 ">
+            <div class="container mx-auto text-center px-4 sm:px-6">
                 <h2 class="text-4xl font-bold mb-8 animate-section">Skills</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-2 ">
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-2">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
                         <img src="dist/img/html-5.png" alt="HTML Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">HTML</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -229,17 +246,17 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">90%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="./dist/img/css-3.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/css-3.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">CSS</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
                             <div class="bg-green-500 h-4 rounded-full" style="width: 85%;"></div>
                         </div>
                         <p class="text-sm text-gray-700 mt-2">85%</p>
-                    </div> 
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/js.png" alt="JavaScript Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    </div>
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/js.png" alt="JavaScript Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">JavaScript</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -247,8 +264,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/typescript.png" alt="JavaScript Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/typescript.png" alt="TypeScript Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">TypeScript</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -256,8 +273,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">60%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/icons8-vue-js-48.png" alt="Vue.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/icons8-vue-js-48.png" alt="Vue.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Vue.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -265,8 +282,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/React.png" alt="Vue.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/React.png" alt="React Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">React</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -274,8 +291,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/Next.png" alt="Vue.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/Next.png" alt="Next.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Next.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -283,8 +300,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/icons8-tailwind-css-50.png" alt="Tailwind Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/icons8-tailwind-css-50.png" alt="Tailwind Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Tailwind</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -292,8 +309,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">80%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/programing.png" alt="Node.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/programing.png" alt="Node.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Node.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -301,8 +318,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">50%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/python.png" alt="Python Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/python.png" alt="Python Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Python</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -310,8 +327,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">75%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/icons8-mongo-db-48.png" alt="MongoDB Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/icons8-mongo-db-48.png" alt="MongoDB Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">MongoDB</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -319,8 +336,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">60%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/java.png" alt="Java Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/java.png" alt="Java Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Java</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -328,8 +345,8 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center hover:scale-105 transition-transform duration-300 animate-section grid-item" >
-                        <img loading="lazy" src="dist/img/github.png" alt="GitHub Logo" class="w-24 h-24 rounded-xl mb-4 object-cover">
+                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                        <img src="dist/img/github.png" alt="GitHub Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">GitHub</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
                         <div class="w-full bg-gray-200 rounded-full h-4">
@@ -342,21 +359,18 @@
         </section>
         <section id="projects" class="py-20 bg-[#0a0a0a]">
             <div class="container mx-auto text-center">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4 glow-text text-white animate-section ">Project</h1>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4 glow-text text-white animate-section">Project</h1>
             </div>
-                        <div class="py-10" id="project-1">
-                    <div class="container mx-auto px-6">
-                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section ">1.Ontravel </h1>
+            <div class="py-10" id="project-1">
+                <div class="container mx-auto px-6">
+                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section">1.Ontravel</h1>
                     <h1 class="mb-4 animate-section text-white">Designed and built a travel recommendation website for destinations in Thailand using Vue.js and Tailwind CSS.</h1>
-                    <div class="overflow-hidden relative animate-section ">
+                    <div class="overflow-hidden relative animate-section">
                         <!-- Images Wrapper -->
-                        <div class="flex transition-transform duration-500 ease-in-out" >
-                            <img loading="lazy" src="dist/img/img_ontravel.png" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-
+                        <div class="flex transition-transform duration-500 ease-in-out">
+                            <img src="dist/img/img_ontravel.png" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
                         </div>
-                        
-
-                        <div class="mt-4 ">
+                        <div class="mt-4">
                             <a href="https://github.com/korarit/onTravel-web-app" target="_blank"
                                class="inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline w-5 h-5 mr-2" viewBox="0 0 24 24">
@@ -366,12 +380,10 @@
                             </a>
                             <a href="https://ontravel-demo.korarit.website" target="_blank"
                                class="inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
-
                                 Demo
                             </a>
                             <a href="https://www.figma.com/design/79mGvWr4BTOgYmy7OP5VsY/กลุ่มพรรคผ่อนน้อย-VERSION-2?node-id=350-825&p=f&t=ikiIsntERMZn6n8T-0" target="_blank"
-                               class=" mt-2 inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
-
+                               class="mt-2 inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
                                 Figma
                             </a>
                         </div>
@@ -380,21 +392,21 @@
             </div>
             <div class="py-10" id="project-2">
                 <div class="container mx-auto px-6">
-                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section grid-item">1.MediSE+ </h1>
+                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section grid-item">2.MediSE+</h1>
                     <h1 class="mb-4 animate-section grid-item text-white">MediSe is a web platform for medical consultations, featuring real-time chat with doctors using Socket.io, appointment scheduling, medication purchases, and secure payments via Stripe.</h1>
-                    <div class="overflow-hidden relative animate-section ">
+                    <div class="overflow-hidden relative animate-section">
                         <!-- Images Wrapper -->
                         <div class="flex transition-transform duration-500 ease-in-out" id="imageSlider">
-                            <img loading="lazy" src="dist/img/1.jpg" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/2.jpg" alt="Project 2" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/3.jpg" alt="Project 3" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/4.jpg" alt="Project 4" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/5.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/6.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/7.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/8.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/9.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-                            <img loading="lazy" src="dist/img/10.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0">
+                            <img src="dist/img/1.jpg" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/2.jpg" alt="Project 2" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/3.jpg" alt="Project 3" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/4.jpg" alt="Project 4" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/5.jpg" alt="Project 5" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/6.jpg" alt="Project 6" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/7.jpg" alt="Project 7" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/8.jpg" alt="Project 8" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/9.jpg" alt="Project 9" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
+                            <img src="dist/img/10.jpg" alt="Project 10" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
                         </div>
                         <!-- Navigation Buttons -->
                         <button id="prevButton" class="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-lg">
@@ -403,7 +415,7 @@
                         <button id="nextButton" class="absolute right-0 top-1/2 -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-lg">
                             Next
                         </button>
-                        <div class="mt-4  " >
+                        <div class="mt-4">
                             <a href="https://github.com/Arrakkhammungkun/PROJECT_MEDISE.git" target="_blank"
                                class="inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline w-5 h-5 mr-2" viewBox="0 0 24 24">
@@ -413,7 +425,6 @@
                             </a>
                             <a href="https://www.figma.com/design/PveWpw89zZ3aFWP3LF05Xt/Project-?node-id=6-2&p=f&t=EkAESsESYnFgn8D5-0" target="_blank"
                                class="inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
-
                                 Figma
                             </a>
                         </div>
@@ -422,17 +433,14 @@
             </div>
             <div class="py-10" id="project-3">
                 <div class="container mx-auto px-6">
-                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section ">2.Barber </h1>
+                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section">3.Barber</h1>
                     <h1 class="mb-4 animate-section grid-item text-white">Built a real-time barber queue system using React, Tailwind CSS, Django, and MongoDB. Users can book and view queues instantly</h1>
-                    <div class="overflow-hidden relative animate-section ">
+                    <div class="overflow-hidden relative animate-section">
                         <!-- Images Wrapper -->
-                        <div class="flex transition-transform duration-500 ease-in-out" >
-                            <img loading="lazy" src="dist/img/img_Barber.png" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0">
-
+                        <div class="flex transition-transform duration-500 ease-in-out">
+                            <img src="dist/img/img_Barber.png" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
                         </div>
-                        
-
-                        <div class="mt-4 ">
+                        <div class="mt-4">
                             <a href="https://github.com/Arrakkhammungkun/Baber-project" target="_blank"
                                class="inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline w-5 h-5 mr-2" viewBox="0 0 24 24">
@@ -441,52 +449,49 @@
                                 View on GitHub
                             </a>
                             <a href="https://www.figma.com/design/mI0p0MJ27jVjySM3pBbJcx/Project--ปี2เทอม2?node-id=6-2&p=f&t=CvTKswJVMkNDc8WR-0" target="_blank"
-                               class=" mt-2 inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
-
+                               class="mt-2 inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
                                 Figma
                             </a>
                             <a href="https://baber-project.vercel.app" target="_blank"
-                               class=" mt-2 inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
-
+                               class="mt-2 inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
                                 Demo
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
         <div class="min-h-screen bg-gray-100 py-10 px-6" id="contact">
             <div class="container mx-auto bg-white p-6 rounded-lg shadow-md">
-                <h1 class="text-3xl md:text-4xl font-bold glow-text-black text-black mx-auto text-center my-12 animate-section "  >contact</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center  ">
+                <h1 class="text-3xl md:text-4xl font-bold glow-text-black text-black mx-auto text-center my-12 animate-section">contact</h1>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <!-- Address -->
                     <div class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card" data-copy="163, Mueang Rai Subdistrict, Phaya Mengrai District, Chiang Rai Province">
-                        <img loading="lazy" src="dist/img/location-dot-solid.svg" alt="Location icon" class="h-[40px] w-[40px] mx-auto">
+                        <img src="dist/img/location-dot-solid.svg" alt="Location icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Address</h3>
                         <p class="text-sm text-gray-600">163, Mueang Rai Subdistrict, Phaya Mengrai District, Chiang Rai Province</p>
                     </div>
                     <!-- Phone -->
                     <div class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card" data-copy="+66 64-136-5722">
-                        <img loading="lazy" src="dist/img/phone-solid.svg" alt="Phone icon" class="h-[40px] w-[40px] mx-auto">
+                        <img src="dist/img/phone-solid.svg" alt="Phone icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
                         <p class="text-sm text-gray-600">+66 64-136-5722</p>
                     </div>
                     <!-- Email -->
                     <div class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card" data-copy="arrak26092547@gmail.com">
-                        <img loading="lazy"  src="dist/img/envelope-solid.svg" alt="Email icon" class="h-[40px] w-[40px] mx-auto">
+                        <img src="dist/img/envelope-solid.svg" alt="Email icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Email</h3>
                         <p class="text-sm text-gray-600">arrak26092547@gmail.com</p>
                     </div>
                     <!-- Facebook -->
                     <a href="https://www.facebook.com/xaraks.kha.mung.khul" target="_blank" class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card clickable">
-                        <img loading="lazy" src="dist/img/facebook-brands-solid.svg" alt="Facebook icon" class="h-[40px] w-[40px] mx-auto">
+                        <img src="dist/img/facebook-brands-solid.svg" alt="Facebook icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Facebook</h3>
                         <p class="text-sm text-blue-600">facebook.com/xaraks.kha.mung.khul</p>
                     </a>
                     <!-- Instagram -->
                     <a href="https://www.instagram.com/txuchy_/" target="_blank" class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card clickable">
-                        <img loading="lazy" src="dist/img/instagram-brands-solid.svg" alt="Instagram icon" class="h-[40px] w-[40px] mx-auto">
+                        <img src="dist/img/instagram-brands-solid.svg" alt="Instagram icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Instagram</h3>
                         <p class="text-sm text-pink-500">instagram.com/txuchy_/</p>
                     </a>
@@ -503,7 +508,6 @@
         </div>
     </div>
     <script>
-        
         // Debounce function to optimize scroll event
         function debounce(func, wait) {
             let timeout;
@@ -513,7 +517,7 @@
                     func(...args);
                 };
                 clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
+                timeout = setTimeout(later, 200);
             };
         }
 
@@ -529,7 +533,7 @@
                 navbar.style.transform = "translateY(0)";
             }
             lastScrollY = currentScrollY;
-        }, 100));
+        }, 200));
 
         // Hamburger menu toggle
         const hamburger = document.getElementById('hamburger');
@@ -558,7 +562,10 @@
 
         function updateSlider() {
             const imageWidth = images[0].clientWidth;
-            slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+            requestAnimationFrame(() => {
+                slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+                slider.style.transition = 'transform 0.5s ease-in-out';
+            });
         }
 
         prevButton.addEventListener('click', () => {
@@ -572,27 +579,32 @@
         });
 
         window.addEventListener('resize', updateSlider);
-       
+
         // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '100px 0px'
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible', 'animate__animated', 'animate__fadeInUp');
-                    // Delay unobserve to ensure animation completes
-                    setTimeout(() => {
-                        observer.unobserve(entry.target);
-                    }, 1000);
+                    entry.target.classList.add('visible');
+                    setTimeout(() => observer.unobserve(entry.target), 800);
                 }
             });
-        }, { threshold: [0.2], rootMargin: '50px 0px' });
+        }, observerOptions);
 
         document.querySelectorAll('.animate-section').forEach(section => {
             observer.observe(section);
         });
 
-        document.querySelectorAll('.grid-item').forEach(item => {
-            observer.observe(item);
-        });
+        setTimeout(() => {
+            document.querySelectorAll('.grid-item').forEach(item => {
+                observer.observe(item);
+            });
+        }, 500);
+
         // Copy to clipboard for contact cards
         document.querySelectorAll('.contact-card:not(.clickable)').forEach(card => {
             card.addEventListener('click', () => {
