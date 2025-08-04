@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar Scroll</title>
-    <link href="./dist/output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <style>
+        
         html {
             scroll-behavior: smooth;
         }
@@ -70,7 +74,7 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
         
-        .animate-section, .grid-item {
+        .animate-section, .grid-item { 
             opacity: 0;
             transform: translateY(15px);
             transition: opacity 0.4s ease-out, transform 0.4s ease-out;
@@ -161,7 +165,7 @@
                     <span></span>
                 </div>
                 <ul class="text-2xl space-x-8 font-medium items-center menu menu-horizontal text-[#c0b9b9]" id="nav-menu">
-                    <li><a class="a1" href="#">HOME</a></li>
+                    <li><a class="a1 " href="#">HOME</a></li>
                     <li><a class="a1" href="#About">About</a></li>
                     <li><a class="a1" href="#skills">skill</a></li>
                     <li><a class="a1" href="#project">Project</a></li>
@@ -169,12 +173,17 @@
                 </ul>
             </div>
         </nav>
+
         <div class="h-screen flex flex-col justify-center items-center text-center bg-white text-black shadow-lg">
             <div class="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-20 animate-section">
                 <!-- Text Section -->
-                <div class="text-center md:text-left">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4 glow-text-black">Hi, I'm Arrak</h1>
-                    <p class="text-lg md:text-xl mb-6 glow-text-black">A passionate Software Engineer and Web Developer</p>
+                <div class="text-center md:text-left ">
+                    <div class="flex  flex-col items-center   md:gap-4 glow-text-black text-center md:flex-row md:items-start md:text-left ">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 glow-text-black  ">Hi, I'm</h1>
+                    <h1 id="typed" class="text-4xl md:text-5xl font-bold mb-4 glow-text-black  min-h-[3rem]"> </h1>
+                    </div>
+
+                    <p  class="text-lg md:text-xl mb-6 glow-text-black">A passionate Software Engineer and Web Developer</p>
                     <a href="#About" class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 transition">
                         Learn More
                     </a>
@@ -191,14 +200,15 @@
                 </div>
             </div>
         </div>
+
         <div class="bg-[#0a0a0a] text-white shadow-lg transition-transform duration-300" id="About">
             <div class="container mx-auto text-start mt-14 mb-12 py-4 px-4 md:px-8">
                 <div class="text-center">
-                    <h1 class="text-2xl md:text-4xl font-bold mb-4 glow-text animate-section">About Me</h1>
+                    <h1 data-aos ="fade-up" class="text-2xl md:text-4xl font-bold mb-4 glow-text  ">About Me</h1>
                 </div>
-                <div class="flex flex-col md:flex-row justify-between gap-10 text-white animate-section">
+                <div  data-aos ="fade-up"   data-aos-delay="300" class="flex flex-col md:flex-row justify-between gap-10 text-white "> <!-- // animate-section -->
                     <!-- ข้อมูลส่วนตัว -->
-                    <div class="flex-1 justify-center md:w-1/2 flex">
+                    <div  class="flex-1 justify-center md:w-1/2 flex">
                         <div class="w-full md:w-[80%] mx-auto text-base md:text-lg leading-relaxed">
                             <div class="flex flex-col gap-2">
                                 <div class="flex gap-2">
@@ -235,9 +245,9 @@
         </div>
         <section id="skills" class="py-20 bg-gray-100">
             <div class="container mx-auto text-center px-4 sm:px-6">
-                <h2 class="text-4xl font-bold mb-8 animate-section">Skills</h2>
+                <h2 data-aos ="fade-up" class="text-4xl font-bold mb-8 ">Skills</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-2">
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up"  class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/html-5.png" alt="HTML Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">HTML</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -246,7 +256,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">90%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/css-3.png" alt="CSS Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">CSS</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -255,7 +265,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">85%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/js.png" alt="JavaScript Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">JavaScript</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -264,7 +274,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/typescript.png" alt="TypeScript Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">TypeScript</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -273,7 +283,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">60%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up"  class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300">
                         <img src="dist/img/icons8-vue-js-48.png" alt="Vue.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Vue.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -282,7 +292,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/React.png" alt="React Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">React</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -291,7 +301,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/Next.png" alt="Next.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Next.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -300,7 +310,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/icons8-tailwind-css-50.png" alt="Tailwind Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Tailwind</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -309,7 +319,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">80%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/programing.png" alt="Node.js Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Node.js</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -318,7 +328,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">50%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/python.png" alt="Python Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Python</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -327,7 +337,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">75%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/icons8-mongo-db-48.png" alt="MongoDB Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">MongoDB</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -336,7 +346,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">60%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/java.png" alt="Java Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">Java</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -345,7 +355,7 @@
                         </div>
                         <p class="text-sm text-gray-700 mt-2">70%</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 animate-section grid-item">
+                    <div data-aos ="fade-up" class="bg-white shadow-md rounded-lg p-4 flex flex-col items-center transition-transform duration-300 ">
                         <img src="dist/img/github.png" alt="GitHub Logo" class="w-24 h-24 rounded-xl mb-4 object-cover" loading="lazy">
                         <h2 class="text-xl font-bold mb-2">GitHub</h2>
                         <p class="text-sm text-gray-600 mb-4">Expertise Level</p>
@@ -359,18 +369,18 @@
         </section>
         <section id="project" class="py-20 bg-[#0a0a0a]">
             <div class="container mx-auto text-center">
-                <h1 class="text-3xl md:text-4xl font-bold mb-4 glow-text text-white animate-section">Project</h1>
+                <h1 data-aos ="fade-up" class="text-3xl md:text-4xl font-bold mb-4 glow-text text-white ">Project</h1>
             </div>
             <div class="py-10" id="project-1">
                 <div class="container mx-auto px-6">
-                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section">1.Ontravel</h1>
-                    <h1 class="mb-4 animate-section text-white">Designed and built a travel recommendation website for destinations in Thailand using Vue.js and Tailwind CSS.</h1>
-                    <div class="overflow-hidden relative animate-section">
+                    <h1  data-aos ="fade-up" data-aos-delay="200" class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white ">1.Ontravel</h1>
+                    <h1 data-aos ="fade-up" data-aos-delay="300" class="mb-4  text-white">Designed and built a travel recommendation website for destinations in Thailand using Vue.js and Tailwind CSS.</h1>
+                    <div data-aos ="fade-up" data-aos-delay="350" class="overflow-hidden relative ">
                         <!-- Images Wrapper -->
                         <div class="flex transition-transform duration-500 ease-in-out">
                             <img src="dist/img/img_ontravel.png" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
                         </div>
-                        <div class="mt-4">
+                        <div data-aos ="fade-up"   class="mt-4">
                             <a href="https://github.com/korarit/onTravel-web-app" target="_blank"
                                class="inline-block px-6 py-3 text-white bg-gray-800 hover:bg-gray-700 rounded-lg font-bold transition-shadow shadow-lg hover:shadow-md">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline w-5 h-5 mr-2" viewBox="0 0 24 24">
@@ -392,11 +402,11 @@
             </div>
             <div class="py-10" id="project-2">
                 <div class="container mx-auto px-6">
-                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section grid-item">2.MediSE+</h1>
-                    <h1 class="mb-4 animate-section grid-item text-white">MediSe is a web platform for medical consultations, featuring real-time chat with doctors using Socket.io, appointment scheduling, medication purchases, and secure payments via Stripe.</h1>
-                    <div class="overflow-hidden relative animate-section">
+                    <h1  data-aos ="fade-up"  data-aos-delay="200"  data-aos-offset="200"   class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white  ">2.MediSE+</h1>
+                    <h1  data-aos ="fade-up" data-aos-delay="400" data-aos-offset="300"   class="mb-4   text-white">MediSe is a web platform for medical consultations, featuring real-time chat with doctors using Socket.io, appointment scheduling, medication purchases, and secure payments via Stripe.</h1>
+                    <div  data-aos ="fade-up" data-aos-delay="450"  data-aos-offset="400"  class="overflow-hidden relative ">
                         <!-- Images Wrapper -->
-                        <div class="flex transition-transform duration-500 ease-in-out" id="imageSlider">
+                        <div    class="flex transition-transform duration-500 ease-in-out" id="imageSlider">
                             <img src="dist/img/1.jpg" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
                             <img src="dist/img/2.jpg" alt="Project 2" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
                             <img src="dist/img/3.jpg" alt="Project 3" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
@@ -430,14 +440,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
             <div class="py-10" id="project-3">
-                <div class="container mx-auto px-6">
-                    <h1 class="text-2xl md:text-2xl font-bold mb-4 glow-text text-white animate-section">3.Barber</h1>
-                    <h1 class="mb-4 animate-section grid-item text-white">Built a real-time barber queue system using React, Tailwind CSS, Django, and MongoDB. Users can book and view queues instantly</h1>
-                    <div class="overflow-hidden relative animate-section">
+                <div class="container mx-auto px-6" >
+                    <h1 data-aos ="fade-up"  data-aos-delay="200"  data-aos-offset="150"   class="text-2xl md:text-2xl font-bold mb-4  text-white ">3.Barber</h1>
+                    <h1  data-aos ="fade-up"  data-aos-delay="300"  data-aos-offset="150"  class="mb-4    text-white">Built a real-time barber queue system using React, Tailwind CSS, Django, and MongoDB. Users can book and view queues instantly</h1>
+                    <div data-aos ="fade-up"  data-aos-delay="350"  data-aos-offset="150"  class="overflow-hidden relative  ">
                         <!-- Images Wrapper -->
-                        <div class="flex transition-transform duration-500 ease-in-out">
+                        <div class="flex ">
                             <img src="dist/img/img_Barber.png" alt="Project 1" class="w-full h-full object-cover rounded-lg flex-shrink-0" loading="lazy">
                         </div>
                         <div class="mt-4">
@@ -460,40 +470,40 @@
         </section>
         <div class="min-h-screen bg-gray-100 py-10 px-6" id="contact">
             <div class="container mx-auto bg-white p-6 rounded-lg shadow-md">
-                <h1 class="text-3xl md:text-4xl font-bold glow-text-black text-black mx-auto text-center my-12 animate-section">contact</h1>
+                <h1    class="text-3xl md:text-4xl font-bold  text-black mx-auto text-center my-12  animate-section">contact</h1>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <!-- Address -->
-                    <div class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card" data-copy="163, Mueang Rai Subdistrict, Phaya Mengrai District, Chiang Rai Province">
+                    <div  class="bg-gray-100 p-4 rounded-lg shadow-md grid-item animate-section " data-copy="163, Mueang Rai Subdistrict, Phaya Mengrai District, Chiang Rai Province">
                         <img src="dist/img/location-dot-solid.svg" alt="Location icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Address</h3>
                         <p class="text-sm text-gray-600">163, Mueang Rai Subdistrict, Phaya Mengrai District, Chiang Rai Province</p>
                     </div>
                     <!-- Phone -->
-                    <div class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card" data-copy="+66 64-136-5722">
+                    <div   class="bg-gray-100 p-4 rounded-lg shadow-md  contact-card grid-item animate-section" data-copy="+66 64-136-5722">
                         <img src="dist/img/phone-solid.svg" alt="Phone icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
                         <p class="text-sm text-gray-600">+66 64-136-5722</p>
                     </div>
                     <!-- Email -->
-                    <div class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card" data-copy="arrak26092547@gmail.com">
+                    <div  class="bg-gray-100 p-4 rounded-lg shadow-md  contact-card grid-item animate-section" data-copy="arrak26092547@gmail.com">
                         <img src="dist/img/envelope-solid.svg" alt="Email icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Email</h3>
                         <p class="text-sm text-gray-600">arrak26092547@gmail.com</p>
                     </div>
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/xaraks.kha.mung.khul" target="_blank" class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card clickable">
+                    <a   href="https://www.facebook.com/xaraks.kha.mung.khul"   target="_blank "  class="bg-gray-100 p-4 rounded-lg shadow-md  contact-card clickable grid-item animate-section">
                         <img src="dist/img/facebook-brands-solid.svg" alt="Facebook icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Facebook</h3>
                         <p class="text-sm text-blue-600">facebook.com/xaraks.kha.mung.khul</p>
                     </a>
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/txuchy_/" target="_blank" class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card clickable">
+                    <a href="https://www.instagram.com/txuchy_/"    target="_blank" class="bg-gray-100 p-4 rounded-lg shadow-md contact-card clickable grid-item animate-section">
                         <img src="dist/img/instagram-brands-solid.svg" alt="Instagram icon" class="h-[40px] w-[40px] mx-auto" loading="lazy">
                         <h3 class="text-lg font-semibold text-gray-800">Instagram</h3>
                         <p class="text-sm text-pink-500">instagram.com/txuchy_/</p>
                     </a>
                     <!-- GitHub -->
-                    <a href="https://github.com/Arrakkhammungkun" target="_blank" class="bg-gray-100 p-4 rounded-lg shadow-md animate-section grid-item contact-card clickable">
+                    <a href="https://github.com/Arrakkhammungkun"    target="_blank" class="bg-gray-100 p-4 rounded-lg shadow-md  contact-card clickable grid-item animate-section">
                         <svg class="w-10 h-10 mx-auto text-gray-700 mb-2" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 .5C4.701.5.5 4.701.5 10a9.5 9.5 0 006.438 9.038c.475.087.65-.212.65-.475 0-.238-.013-1.05-.013-1.912-2.637.512-3.2-.637-3.4-1.225-.112-.287-.6-1.225-1.025-1.475-.362-.2-.875-.7-.012-.712.812-.013 1.387.75 1.587 1.063.925 1.587 2.375 1.125 2.962.863.087-.65.362-1.125.65-1.387-2.312-.262-4.737-1.162-4.737-5.15 0-1.137.4-2.075 1.062-2.8-.112-.262-.475-1.3.1-2.712 0 0 .875-.275 2.862 1.062a9.756 9.756 0 015.2 0c1.987-1.325 2.85-1.062 2.85-1.062.587 1.412.225 2.462.1 2.712.675.725 1.062 1.663 1.062 2.8 0 4-2.425 4.887-4.737 5.15.4.35.725 1.012.725 2.025 0 1.462-.013 2.625-.013 2.975 0 .262.175.562.65.475A9.513 9.513 0 0019.5 10C19.5 4.701 15.299.5 10 .5z"></path>
                         </svg>
@@ -504,7 +514,35 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
     <script>
+        function initAOS(options = {}) {
+            AOS.init({
+            offset: options.offset || 200,
+            delay: options.delay || 100,
+            duration: options.duration || 600,
+            easing: options.easing || 'ease-in-out',
+            once: options.once !== undefined ? options.once : false,
+            mirror: true,
+        });
+        }   
+        document.addEventListener('DOMContentLoaded', function () {
+            initAOS();
+        });
+
+
+
+        var typed = new Typed('#typed', {
+            strings: ['Arrak','Touchy',],
+            typeSpeed: 80,      // ความเร็วพิมพ์ (มิลลิวินาที) 
+            backSpeed: 80,      // ความเร็วลบข้อความ
+            loop: true,
+            showCursor:false,   // ให้วนซ้ำไหม
+            backDelay : 800,
+                                
+        });
         // Debounce function to optimize scroll event
         function debounce(func, wait) {
             let timeout;
